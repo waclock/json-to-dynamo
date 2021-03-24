@@ -1,10 +1,10 @@
 {
   "name": "json-to-dynamodb",
   "version": "1.0.0",
-  "description": "Takes JSON array and inserts it to dynamoDB",
+  "description": "Takes JSON array and inserts it to dynamoDB. Generates searchable columns and uses primary key + Table name based on env variables",
   "main": "app.js",
-  "repository": "https://github.com/cplankey/json-to-dynamo.gi",
-  "author": "Chris Plankey",
+  "repository": "https://github.com/waclock/json-to-dynamo.git",
+  "author": "John Peebles",
   "license": "MIT",
   "scripts": {
     "test": "mocha tests/unit/"

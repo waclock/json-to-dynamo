@@ -10,6 +10,10 @@ Globals:
 Parameters:
   DynamoDBTableNameParameter:
     Type: String
+  DynamoDBPrimaryKeyParameter:
+    Type: String
+  DynamoDBSearchableFieldsParameter:
+    Type: CommaDelimitedList
 
 Resources:
   JSONToDynamoDBFunction:
@@ -21,6 +25,8 @@ Resources:
       Environment:
         Variables:
           TABLE_NAME: !Ref DynamoDBTableNameParameter
+          PRIMARY_KEY: !Ref DynamoDBPrimaryKeyParameter
+          SEARCHABLE_FIELDS: !Ref DynamoDBSearchableFieldsParameter
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref DynamoDBTableNameParameter
