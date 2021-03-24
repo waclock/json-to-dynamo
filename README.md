@@ -19,3 +19,28 @@ Runtime exited with error: signal: killed
 This assumes you already have a JSON file ready to paste into the console and a DynamoDB table published with a key that matches one of your JSON keys
 
 
+### Publishing a new version
+
+In order to publish a new version you must generate an output yaml that will be used by AWS serverless repo. You can do this by running:
+
+```
+aws cloudformation package --template-file template.yaml --s3-bucket my-cool-bucket --output-template output.yaml
+```
+
+Make sure you give the necessary permissions to your bucket, by adding a policy like the following to your bucket:
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "serverlessrepo.amazonaws.com"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::my-cool-bucket/*"
+    }
+  ]
+}
+```
