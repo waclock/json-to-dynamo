@@ -13,7 +13,7 @@ Parameters:
   DynamoDBPrimaryKeyParameter:
     Type: String
   DynamoDBSearchableFieldsParameter:
-    Type: CommaDelimitedList
+    Type: String
 
 Resources:
   JSONToDynamoDBFunction:

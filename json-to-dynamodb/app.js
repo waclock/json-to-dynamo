@@ -4,7 +4,7 @@ const AWS = require("aws-sdk");
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 const TABLE_NAME = process.env.TABLE_NAME;
 const PRIMARY_KEY = process.env.PRIMARY_KEY;
-const SEARCHABLE_FIELDS = process.env.SEARCHABLE_FIELDS;
+const SEARCHABLE_FIELDS = process.env.SEARCHABLE_FIELDS.split(",");
 /**
  *
  * Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
